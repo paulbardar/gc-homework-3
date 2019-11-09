@@ -72,6 +72,12 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #00B1AF;
     position: relative;
     padding: 30px 30px 80px 25px;
+    background: #00B1AF url(../img/camera-shadow.png) no-repeat 80% 150%;
+}
+@media (max-width: 640px) {
+    .ba-product__card {
+        background-position: 50% 90%;
+    }
 }
 .ba-product__name {
     margin: 0;
@@ -85,18 +91,21 @@ h1, h2, h3, h4, h5, h6, p {
 .ba-product__img {
     position: relative;
     left: -60px;
+
 }
 @media (max-width: 640px) {
     .ba-product__img {
         left: 20px;
     }
 }
-.ba-product__img:after {
-    position: absolute;
-    content: url(../img/camera-shadow.png);
-    bottom: -156px;
-    left: -50px;
-}
+
+
+/*.ba-product__img:after {*/
+/*    position: absolute;*/
+/*    content: url(../img/camera-shadow.png);*/
+/*    bottom: -156px;*/
+/*    left: -50px;*/
+/*}*/
 .ba-product__img img {
 }
 
