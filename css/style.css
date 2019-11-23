@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
 
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -73,7 +74,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #00B1AF;
     position: relative;
     padding: 30px 30px 80px 25px;
-    background: #00B1AF url(../img/camera-shadow.png) no-repeat 80% 150%;
+
     height: 100%;
 }
 @media (max-width: 640px) {
@@ -93,23 +94,57 @@ h1, h2, h3, h4, h5, h6, p {
 .ba-product__img {
     position: relative;
     left: -60px;
-
 }
-@media (max-width: 640px) {
-    .ba-product__img {
-        left: 20px;
+.ba-product__img img {
+    position: relative;
+    z-index: 5;
+}
+
+.ba-product__img:after {
+    position: absolute;
+    content: url(../img/camera-shadow.png);
+    height: 200px;
+    bottom: 54px;
+    left: -100px;
+    display: inline-block;
+    z-index: 1;
+	width: 70%;
+}
+@media screen and (max-width: 648px) {
+    .ba-product__img:after {
+        left: -110px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .ba-product__img:after {
+        display: none;
+    }
+    .ba-product__img img {
+        filter: drop-shadow(0px 33px 27px #222);
     }
 }
 
 
-/*.ba-product__img:after {*/
-/*    position: absolute;*/
-/*    content: url(../img/camera-shadow.png);*/
-/*    bottom: -156px;*/
-/*    left: -50px;*/
-/*}*/
-.ba-product__img img {
+
+@media (max-width: 800px) {
+    .ba-product__img {
+        left: 0;
+    }
+    .ba-product__img img {
+        display: block;
+        margin: 0 auto;
+    }
 }
+
+@media (max-width: 800px) {
+    .ba-container{
+        max-width: 650px;
+    }
+    .ba-col-6 {
+        width: 100%;
+    }
+}
+
 
 .ba-product__thumbs {
     display: flex;
@@ -141,19 +176,8 @@ h1, h2, h3, h4, h5, h6, p {
     object-fit: cover;
     object-position: center;
 }
-.ba-product__img--sm1 {
-    /*top: 160px;*/
-}
 
-.ba-product__img--sm2 {
-    /*top: 265px;*/
-}
-.ba-product__img--sm3 {
-    /*top: 370px;*/
-}
-
-
-@media (max-width: 640px) {
+@media screen and (max-width: 800px) {
     .ba-product__visual {
         padding-top: 0;
         padding-bottom: 0;
@@ -177,8 +201,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 @media screen and (max-width: 400px){
     .ba-product__thumbs {
-        flex-direction: column;
         align-items: center;
+    }
+    .ba-product__img--sm {
+        max-height: 60px;
+        margin-left: 10px;
     }
 }
 
@@ -329,8 +356,3 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #ffffff;
 }
 
-@media (max-width: 640px) {
-    .ba-col-6 {
-        width: 100%;
-    }
-}
