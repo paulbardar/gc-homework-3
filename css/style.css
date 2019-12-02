@@ -148,6 +148,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .ba-product__thumbs {
     display: flex;
+    z-index: 5;
     flex-direction: column;
     position: absolute;
     right: -45px;
